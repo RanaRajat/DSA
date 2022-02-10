@@ -31,7 +31,7 @@ function runProgram(input){
 }
 
 if(process.env.USER === 'rajatrana'){
- runProgram(`{[()]})`)
+ runProgram(`{[()]}))`)
 }
 process.stdin.resume();
 process.stdin.setEncoding("ascii");

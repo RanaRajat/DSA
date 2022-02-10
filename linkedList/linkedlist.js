@@ -136,17 +136,35 @@ clearList(){
     this.head = null;
     this.size=0;
 }
+
+reverse(){
+
+    let current = this.head;
+  let prev = null;
+  let nextE = null;
+  while(current!==null){
+      //console.log(current);
+      nextE = current.next;
+      current.next = prev;
+      prev = current;
+      current = nextE;
+  }
+  return prev;
 }
 
+
+}
 const ll = new linkedList();
 ll.insertFirst(100);
 // ll.insertFirst(400);
 
 ll.insertLast(500);
 ll.insertAt(1,1000);
-ll.clearList();
-ll.printList();
-ll.getAt(0);
-ll.removeAt(1);
-
-console.log(ll);
+ll.insertLast(200);
+//ll.clearList();
+ll.reverseFun();
+// ll.getAt(0);
+// ll.removeAt(1);
+//console.log(ll.reverse());
+// ll.printList();
+// console.log(ll);
