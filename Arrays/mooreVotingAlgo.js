@@ -1,27 +1,31 @@
-//majority element should be greater than half the number of elemenst in o(nlogn)
-
-//best solition is using object
-
 function runProgram(input){
 
-   let arr = input.split(" ").map(Number);
-
-
-   let maj = Math.floor(arr.length/2);
    
-   for(let i =0;i<=maj;i++){
-      if(arr[i]===arr[i+maj]){
-    console.log(arr[i]);
-    break;
-    }
-   }
+let arr = input.split(" ").map(Number);
 
+let maj = 0;
+let count = 1;
+
+for(let i =1;i<arr.length;i++){
+    if(arr[maj]===arr[i]){
+        count++;
+    }
+    else{
+       count--;
+    }
+    if(count===0){
+        maj = i;
+        count=1;
+    }
+
+}
+console.log(arr[maj]);
   
 
 }
 
 if(process.env.USER === 'rajatrana'){
- runProgram(`3 3 3 3 3 4 4 4 4`)
+ runProgram(`1 1 1 3 3 3 3 3 4 4 4 4`)
 }
 process.stdin.resume();
 process.stdin.setEncoding("ascii");
