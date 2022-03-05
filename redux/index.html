@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .btn{
+           width: 8rem;
+           height: 3rem;
+       }
+       .active{
+            width: 10rem;
+            height: 10rem;
+       }
+       .ptag{
+           display: none;
+       }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div id="display">
+            <p class="ptag">hey Ankit</p>
+        </div>
+       <button class="btn">Click</button>
+
+    </div>
+</body>
+<script>
+     let btn = document.getElementsByClassName("btn")[0];
+      let display = document.getElementById("display");
+      let ptag = document.getElementsByClassName("ptag")[0];
+
+      
+     btn.addEventListener("click",function(){
+        let a =   display.classList.contains("active");
+       
+         if(!a){
+         
+           
+          display.classList.add("active");
+          ptag.classList.remove("ptag");
+        }
+          else{
+            
+              display.classList.remove("active");
+              ptag.classList.add("ptag");
+          }
+         
+     })
+
+     let i =0;
+     do{
+       
+       console.log(i);
+       i++;
+     }while(i<10)
+
+</script>
+
+</html>
